@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const route = require('./src/routes/paletas.route');
+const routes = require('./src/routes/personagens.route');
 
 const port = 3000;
 const app = express();
@@ -8,17 +8,17 @@ const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use('/paletas', routes);
+app.use('/personagens', routes);
 
 
-  app.get('/paletas/todas-paletas', (req, res) =>{
-    res.send(paletas);
+  app.get('/personagens/all-personagens', (req, res) =>{
+    res.send(personagens);
   });
 
-  app.get('/paletas/paleta/:id', (req, res) => {
+  app.get('/personagens/personagem/:id', (req, res) => {
     const idParam = Number(req.params.id);
-    const chosenPaleta = paletas.find((paleta) => paleta.id === idParam);
-    res.send(chosenPaleta);
+    const chosenpersonagem = personagens.find((personagem) => personagem.id === idParam);
+    res.send(chosenpersonagem);
   });
 
 app.listen(port, () => {
