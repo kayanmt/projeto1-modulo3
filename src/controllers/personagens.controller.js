@@ -5,9 +5,9 @@ const findPersonagensController = (req, res) => {
   res.send(allpersonagens);
 };
 
-const findpersonagemByIdController = (req, res) => {
+const findPersonagemByIdController = (req, res) => {
   const idParam = req.params.id;
-  const chosenpersonagem = personagensService.findpersonagemByIdService(idParam);
+  const chosenpersonagem = personagensService.findPersonagemByIdService(idParam);
   res.send(chosenpersonagem);
 };
 
@@ -32,7 +32,7 @@ const createPersonagemController = (req, res) => {
 
 module.exports = {
   findPersonagensController,
-  findpersonagemByIdController,
+  findPersonagemByIdController,
   createPersonagemController,
   updatePersonagemController,
   deletePersonagemController,
