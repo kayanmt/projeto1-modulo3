@@ -1,34 +1,14 @@
-const personagens = [
-    {
-      id: 1,
-      sabor: 'Hulk',
-      descricao:
-        'Quam vulputate dignissim suspendisse in est ante in nibh mauris.',
-      foto: './assets/images/hulk.png',
-    },
-    {
-      id: 2,
-      sabor: 'Batman',
-      descricao:
-        'Quam vulputate dignissim suspendisse in est ante in nibh mauris.',
-      foto: './assets/images/batman.png',
-    },
-    {
-      id: 3,
-      sabor: 'Drácula',
-      descricao:
-        'Quam vulputate dignissim suspendisse in est ante in nibh mauris.',
-      foto: './assets/images/dracula.png',
-    },
-  ];
+  const personagens = require('../models/personagens'); 
+
+  const findPersonagensService = async () => {
+  const personagens = await Personagem.find();
+  return personagens;
+};
   
-  const findPersonagensService = () => {
-    return personagens;
-  };
-  
-  const findPersonagemByIdService = (id) => {
-    return personagens.find((personagem) => personagem.id == id);
-  };
+const findPersonagemByIdService = async (id) => {
+  const personagem = await Personagem.findById(id);
+  return personagem;
+};
 
   const createPersonagenservice = (newpersonagem) => {
     const newId = personagens.length + 1;

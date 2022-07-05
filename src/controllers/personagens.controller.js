@@ -1,14 +1,28 @@
+const mongoose = require('mongoose'); 
 const personagensService = require('../services/personagens.service');
 
-const findPersonagensController = (req, res) => {
-  const allpersonagens = personagensService.findPersonagensService();
-  res.send(allpersonagens);
+const findPersonagensController = async (req, res) => {
+  const allPersonagens = await PersonagensService.findPersonagensService();
+  res.send(allPersonagens);
 };
 
-const findPersonagemByIdController = (req, res) => {
+const findPersonagemByIdController = async (req, res) => {
   const idParam = req.params.id;
-  const chosenpersonagem = personagensService.findPersonagemByIdService(idParam);
-  res.send(chosenpersonagem);
+
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
+    res
+      .status(400)
+      .send({ message: 'ID inválido!' });
+    return;
+  }
+
+  const chosenPersonagem = await personagensService.findPersonagemByIdService(idParam);
+
+  if (!chosenPersonagem) {
+    return res.status(404).send({ message: 'Personagem não encontrada!' });
+  }
+
+  res.send(chosenPersonagem);
 };
 
 const createPersonagemController = (req, res) => {
