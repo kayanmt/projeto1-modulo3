@@ -10,24 +10,19 @@ const findPersonagemByIdService = async (id) => {
   return personagem;
 };
 
-  const createPersonagenservice = (newpersonagem) => {
-    const newId = personagens.length + 1;
-    newpersonagem.id = newId;
-    personagens.push(newpersonagem);
-    return newpersonagem;
-  };
+const createPersonagenservice = async (newPersonagem) => {
+  const personagemCriada = await Personagem.create(newPersonagem)
+  return personagemCriada;
+};
 
-  const updatePersonagenservice = (id, personagemEdited) => {
-    personagemEdited['id'] = id;
-    const personagemIndex = personagens.findIndex((personagem) => personagem.id == id);
-    personagens[personagemIndex] = personagemEdited;
-    return personagemEdited;
-  };
+const updatePersonagenservice = async (id, personagemEdited) => {
+  const personagemAtualizada = await Personagemaleta.findByIdAndUpdate(id, personagemEdited);
+  return personagemAtualizada;
+};
 
-  const deletePersonagenservice = (id) => {
-    const personagemIndex = personagens.findIndex((personagem) => personagem.id == id);
-    return personagens.splice(personagemIndex, 1);
-  };
+const deletePersonagenservice = async (id) => {
+  return await Personagem.findByIdAndDelete(id);
+};
   
   module.exports = {
     findPersonagensService,
