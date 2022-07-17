@@ -1,23 +1,23 @@
 [
-    {
-      "id": "1",
-      "nome": "Hulk",
-      "descricao":
-        "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      "foto": "./assets/images/hulk.png"
-    },
-    {
-      "id": "2",
-      "nome": "Batman",
-      "descricao":
-        "'Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      "foto": "./assets/images/batman.png"
-    },
-    {
-      "id": "3",
-      "nome": "Drácula",
-      "descricao":
-        "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
-      "foto": "./assets/images/dracula.png"
-    }
-  ]
+  {
+    "id": "1",
+    "nome": "Rick",
+    "descricao":
+      "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+    "foto": "./assets/images/rick.png"
+  },
+  {
+    "id": "2",
+    "nome": "Morty",
+    "descricao":
+      "'Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+    "foto": "./assets/images/morty.png"
+  },
+  {
+    "id": "3",
+    "nome": "Summer",
+    "descricao":
+      "Quam vulputate dignissim suspendisse in est ante in nibh mauris.",
+    "foto": "./assets/images/summer.png"
+  }
+]
