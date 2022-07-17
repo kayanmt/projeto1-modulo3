@@ -30,10 +30,9 @@ const createPersonagemController = async (req, res) => {
 
   if (
     !personagem ||
-    !personagem.sabor ||
+    !personagem.nome ||
     !personagem.descricao ||
-    !personagem.foto ||
-    !personagem.preco
+    !personagem.foto
   ) {
     return res.status(400).send({
       message:
@@ -63,7 +62,7 @@ const updatePersonagemController = async (req, res) => {
 
   if (
     !personagemEdit ||
-    !personagemEdit.sabor ||
+    !personagemEdit.nome ||
     !personagemEdit.descricao ||
     !personagemEdit.foto ||
     !personagemEdit.preco
