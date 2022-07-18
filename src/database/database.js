@@ -1,18 +1,5 @@
 const mongoose = require('mongoose');
-function connectToDatabase() {}
-function connectToDatabase() {
-    mongoose.connect()
-  }
-  function connectToDatabase() {
-    mongoose.connect('mongodb://localhost:27017/personagens-db')
-  }
-  function connectToDatabase() {
-    mongoose.connect('mongodb://localhost:27017/personagens-db', {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-  }
-  function connectToDatabase() {
+  const connectToDatabase = () =>{
     mongoose
       .connect("mongodb+srv://kayanmt:<K@1506Ka>@api-personagens.rhgnd.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
@@ -24,6 +11,6 @@ function connectToDatabase() {
       .catch((err) => {
         return console.log(`Erro na conexao com o banco: ${err}`);
       });
-  }
+  };
 
   module.exports = connectToDatabase;
