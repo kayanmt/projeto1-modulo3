@@ -14,7 +14,7 @@ function connectToDatabase() {
   }
   function connectToDatabase() {
     mongoose
-      .connect('mongodb://localhost:27017/personagens-db', {
+      .connect("mongodb+srv://kayanmt:<K@1506Ka>@api-personagens.rhgnd.mongodb.net/?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
       })
